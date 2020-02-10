@@ -1,4 +1,4 @@
-import React, {Component} from 'React'
+import React, {Component} from 'react'
 import {FaNetworkWired} from 'react-icons/fa'
 import {MdDirectionsCar} from 'react-icons/md'
 import {GoReport} from 'react-icons/go'
