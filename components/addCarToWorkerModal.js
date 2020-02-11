@@ -23,33 +23,13 @@ class AddCarToWorkerModal extends Component {
         });
     }
 
-    fetchAssignedCars() {
-        let corporateId = localStorage.getItem("CorporateId");
-        let bearer = localStorage.getItem('Authorization')
-        const settings = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': bearer
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-
-        };
+    componentDidMount() {
         let automobile = this.props.automobiles[0]
         this.setState({
             carSelection: automobile.automobileId + ', ' + automobile.automobileLicensePlate + ', ' +
                 automobile.automobileBrand + ', ' +
                 automobile.automobileModel + ', ' + automobile.automobileYear
         })
-
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
-            .then(response => response.json())
-            .then(data => this.setState({ currentlyAssignedVehicles: data }));
-    }
-
-    componentDidMount() {
-
-        this.fetchAssignedCars();
     }
     render() {
         return (
@@ -72,11 +52,11 @@ class AddCarToWorkerModal extends Component {
                             Güncel Araç Listesi
                             <hr></hr>
                             {
-                                this.state.currentlyAssignedVehicles != null ?
+                                this.props.currentlyAssignedVehicles != null ?
                                     (
-                                        this.state.currentlyAssignedVehicles.length == 0 ?
+                                        this.props.currentlyAssignedVehicles.length == 0 ?
                                             'Araç bulunamadı' :
-                                            this.state.currentlyAssignedVehicles.map((automobile) =>
+                                            this.props.currentlyAssignedVehicles.map((automobile) =>
                                                 <li>
 
                                                     {

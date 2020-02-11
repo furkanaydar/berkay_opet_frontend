@@ -26,6 +26,7 @@ class WorkersPage extends Component {
             showAddCarModal: false,
             currentWorker: null,
             workers: [],
+            currentlyAssignedVehicles: []
         }
         this.handleAddUserDisplay = this.handleAddUserDisplay.bind(this)
         this.handleFormChange = this.handleFormChange.bind(this)
@@ -81,10 +82,13 @@ class WorkersPage extends Component {
                 }))
     }
     handleModalCurrent(worker) {
-        this.setState({
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
+        .then(response => response.json())
+        .then(data => this.setState({ 
             currentWorker: worker,
-            showAddCarModal: true
-        })
+            showAddCarModal: true,
+            currentlyAssignedVehicles: data }));
+
     }
     handleAssignment(vehicleId, workerId) {
         let corporateId = localStorage.getItem("CorporateId");
@@ -198,6 +202,7 @@ class WorkersPage extends Component {
                                 handleAssignment={this.handleAssignment}
                                 handleCloseModal={this.handleCloseModal}
                                 automobiles={this.state.automobiles}
+                                currentlyAssignedVehicles={this.state.currentlyAssignedVehicles}
                                 workerId={this.state.currentWorker.workerId}
                                 showAddCarModal={this.state.showAddCarModal}
                                 currentWorker={this.state.currentWorker}>
