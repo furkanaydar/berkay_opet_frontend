@@ -49,7 +49,7 @@ class AddCarToWorkerModal extends Component {
                         {' isimli çalışanınıza araç ataması yapın.'}
 
                         <div style={{ marginTop: 20 }}>
-                            Güncel Araç Listesi
+                            Çalışanın Güncel Araç Listesi
                             <hr></hr>
                             {
                                 this.props.currentlyAssignedVehicles != null ?
