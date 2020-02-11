@@ -69,7 +69,7 @@ class WorkersPage extends Component {
         };
 
 
-        fetch("http://localhost:8080/workers/" + workerId, settings)
+        fetch("https://berkay-project-backend.herokuapp.com//workers/" + workerId, settings)
         window.location.reload()
 
 
@@ -90,7 +90,7 @@ class WorkersPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        fetch('http://localhost:8080/corporates/' + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
+        fetch('https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
         window.location.reload();
     }
 
@@ -126,9 +126,9 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch('http://localhost:8080/corporates/' + corporateId + '/workers', settings);
+        fetch('https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/workers', settings);
         
-        fetch("http://localhost:8080/corporates/" + corporateId + "/workers", get_settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers", get_settings)
         .then(response => response.json())
         .then(data => this.setState({workers: data}));
         window.location.reload();
@@ -148,11 +148,11 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("http://localhost:8080/corporates/" + corporateId + "/workers", settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers", settings)
         .then(response => response.json())
         .then(data => this.setState({workers: data}));
 
-        fetch("http://localhost:8080/corporates/" + corporateId + "/automobiles", settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", settings)
         .then(response => response.json())
         .then(data => this.setState({automobiles: data}));
 
@@ -352,9 +352,9 @@ WorkersPage.getInitialProps = async ({ req, query }) => {
         },
 
     };
-    let workers = await fetch("http://localhost:8080/corporates/" + corporateId + "/workers", settings)
+    let workers = await fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers", settings)
     const json_workers = await workers.json();
-    let automobiles = await fetch("http://localhost:8080/corporates/" + corporateId + "/automobiles", settings)
+    let automobiles = await fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", settings)
     const json_automobiles = await automobiles.json();
     console.log('wroker,:' + json_workers.length)
     // TODO: aşağıdaki satırda bulunan adresi kendi sunucu adresinle değiştirmelisin

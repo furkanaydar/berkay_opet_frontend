@@ -39,7 +39,7 @@ class CorporateLogin extends Component {
             },
             body: JSON.stringify(data)
         };
-        const res = await fetch('http://localhost:8080/auth/corporateLogin', settings);
+        const res = await fetch('https://berkay-project-backend.herokuapp.com//auth/corporateLogin', settings);
         const res_json = await res.json();
         localStorage.setItem("Authorization", res_json.Authorization)
         localStorage.setItem("Corporate", res_json.Corporate)

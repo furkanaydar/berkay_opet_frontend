@@ -70,9 +70,9 @@ class AutomobilesPage extends Component {
             body: JSON.stringify(data)
         };
         
-        fetch('http://localhost:8080/corporates/' + corporateId + '/automobiles', settings);
+        fetch('https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/automobiles', settings);
         
-        fetch("http://localhost:8080/corporates/" + corporateId + "/automobiles", get_settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", get_settings)
         .then(response => response.json())
         .then(data => this.setState({vehicles: data}));
 
@@ -91,7 +91,7 @@ class AutomobilesPage extends Component {
             },
     
         };
-        fetch("http://localhost:8080/corporates/" + corporateId + "/automobiles", settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", settings)
         .then(response => response.json())
         .then(data => this.setState({vehicles: data}));
     }

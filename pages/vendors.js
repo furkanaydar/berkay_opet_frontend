@@ -77,10 +77,10 @@ class VendorsPage extends Component {
             body: JSON.stringify(data)
         };
         
-        fetch('http://localhost:8080/coordinates', address_settings)
-        fetch('http://localhost:8080/corporates/' + corporateId + '/vendors', settings);
+        fetch('https://berkay-project-backend.herokuapp.com//coordinates', address_settings)
+        fetch('https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/vendors', settings);
         
-        fetch("http://localhost:8080/corporates/" + corporateId + "/vendors", get_settings)
+        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/vendors", get_settings)
         .then(response => response.json())
         .then(data => this.setState({vendors: data}));
         window.location.reload();
@@ -97,7 +97,7 @@ class VendorsPage extends Component {
             },
     
         };
-        let vendors = fetch("http://localhost:8080/corporates/" + corporateId + "/vendors", settings)
+        let vendors = fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/vendors", settings)
         .then(response => response.json())
         .then(data => this.setState({vendors: data}));
     }
@@ -215,7 +215,7 @@ VendorsPage.getInitialProps = async ({ req, query }) => {
         },
 
     };
-    let vendors = await fetch("http://localhost:8080/corporates/" + corporateId + "/vendors", settings)
+    let vendors = await fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/vendors", settings)
     const json_vendors = await vendors.json();
 
 
