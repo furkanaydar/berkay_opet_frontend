@@ -33,6 +33,7 @@ class WorkersPage extends Component {
         this.handleCloseModal = this.handleCloseModal.bind(this)
         this.handleAssignment = this.handleAssignment.bind(this)
         this.handleModalCurrent = this.handleModalCurrent.bind(this)
+        this.handleDeleteWorker = this.handleDeleteWorker.bind(this)
     }
 
     handleAddUserDisplay() {
@@ -77,7 +78,7 @@ class WorkersPage extends Component {
         .then(response => response.json())
         .then(data =>
             this.setState({
-                workers : currentWorkers.filter(worker => worker.workerId != workerId)
+                workers : currentWorkers.filter(worker => worker.workerId != data.workerId)
             }))
     }
     handleModalCurrent(worker) {

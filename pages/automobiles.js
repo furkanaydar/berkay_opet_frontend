@@ -24,6 +24,7 @@ class AutomobilesPage extends Component {
         this.handleAddVehicleDisplay = this.handleAddVehicleDisplay.bind(this)
         this.handleFormChange = this.handleFormChange.bind(this)
         this.formSubmit = this.formSubmit.bind(this);
+        this.handleDeleteVehicle = this.handleDeleteVehicle.bind(this)
     }
     handleAddVehicleDisplay() {
         let currentDisplay = this.state.addVehicleDisplay
