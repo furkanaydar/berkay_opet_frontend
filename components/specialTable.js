@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import { AiOutlineDelete } from 'react-icons/ai'
+import { MdDirectionsCar } from 'react-icons/md'
+import Table from 'react-bootstrap/Table'
+
 
 class SpecialTable extends Component() {
     constructor() {
@@ -31,11 +35,7 @@ class SpecialTable extends Component() {
                                 <td>{worker.workerLastName}</td>
                                 <td>{worker.phoneNumber}</td>
                                 <td
-                                    onClick={() =>
-                                        this.setState({
-                                            currentWorker: worker,
-                                            showAddCarModal: true
-                                        })}
+                                    onClick={() => this.props.handleModalCurrent(worker)}
                                     style={{ cursor: 'pointer', textDecoration: 'underline' }}>
                                     {worker.numberOfAssignedCars}
                                 </td>
@@ -43,7 +43,7 @@ class SpecialTable extends Component() {
                                     <a style={{ cursor: 'pointer' }} onClick={() => this.props.handleDeleteWorker(worker.workerId)}>
                                         <AiOutlineDelete style={{ marginRight: 12 }}></AiOutlineDelete>
                                     </a>
-                                    <a style={{ cursor: 'pointer' }} onClick={this.props.handleModalCurrent}>
+                                    <a style={{ cursor: 'pointer' }} onClick={() => this.props.handleModalCurrent(worker)}>
                                         <MdDirectionsCar></MdDirectionsCar>
                                     </a>
 

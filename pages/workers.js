@@ -58,7 +58,7 @@ class WorkersPage extends Component {
         })
     }
 
-    async handleDeleteWorker(workerId) {
+    handleDeleteWorker(workerId) {
         let bearer = localStorage.getItem('Authorization')
         const settings = {
             method: 'DELETE',
@@ -71,11 +71,8 @@ class WorkersPage extends Component {
 
 
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
-        window.location.reload()
-
-
     }
-    handleModalCurrent() {
+    handleModalCurrent(worker) {
         this.setState({
             currentWorker: worker,
             showAddCarModal: true
