@@ -72,7 +72,6 @@ class WorkersPage extends Component {
 
         let currentWorkers = this.state.workers
 
-        console.log(currentWorkers.filter(worker => worker.workerId != data.workerId))
         fetch("https://cors-anywhere.herokuapp.com/" + 
         "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
         .then(response => response.json())
