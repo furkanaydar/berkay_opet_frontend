@@ -118,7 +118,7 @@ class WorkersPage extends Component {
         setTimeout(() =>
             fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
                 .then(response => response.json())
-                .then(data => this.setState({ workers: data })), 2000
+                .then(data => this.setState({showAddCarModal:false, workers: data })), 2000
         )
 
     }
