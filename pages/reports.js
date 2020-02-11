@@ -48,7 +48,8 @@ class ReportsPage extends Component {
                             <p style={{fontSize:13 , padding: 8}}>
                                 Mobil uygulamaya giriş yapan çalışanlar, plaka numaralarıyla beraber
                                 konum bilgilerini sisteme gönderir. Eğer ilgili araç çalışana tanımlanmışsa
-                                ve gönderilen konum anlaşmalı istasyonlarla eşleşiyorsa, istek onaylanır ve
+                                ve gönderilen konum anlaşmalı istasyonlarla eşleşiyorsa, istek sistem tarafından
+                                otomatik onaylanır ve
                                 QR kod üretilir. Bu QR kod daha sonra istasyon tarafından görünebilir hale
                                 gelecektir.
                                 QR ile birlikte isteği yapan plaka bilgisi de geri gönderilir, ve bu plakanın
