@@ -97,7 +97,8 @@ class WorkersPage extends Component {
         window.location.reload();
     }
 
-    formSubmit() {
+    formSubmit(event) {
+        event.preventDefault();
         let corporateId = localStorage.getItem("CorporateId");
         let bearer = localStorage.getItem('Authorization')
         const data = {
@@ -224,7 +225,7 @@ class WorkersPage extends Component {
                         {
                             this.state.addUserDisplay ?
                                 <div style={{ marginTop: 20, borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}>
-                                    <Form style={{ marginTop: 32, }}>
+                                    <Form style={{ marginTop: 32, }} onSubmit={this.formSubmit}>
                                         <Form.Group controlId="formFirstName">
                                             <Form.Label>Çalışan İsmi</Form.Label>
                                             <Form.Control
@@ -280,7 +281,7 @@ class WorkersPage extends Component {
                                                 onChange={this.handleFormChange} />
                                         </Form.Group>
 
-                                        <Button variant="primary" onClick={this.formSubmit}>
+                                        <Button variant="primary" type='submit'>
                                             Kaydet
                                 </Button>
                                     </Form>
