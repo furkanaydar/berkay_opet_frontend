@@ -133,7 +133,7 @@ class WorkersPage extends Component {
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
         .then(response => response.json())
         .then(data => this.setState({workers: data})); 
-      //  window.location.reload();
+        window.location.reload();
     }
 
     componentDidMount() {
