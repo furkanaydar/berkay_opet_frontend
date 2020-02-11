@@ -47,6 +47,7 @@ class AutomobilesPage extends Component {
 
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + 
         corporateId + "/automobiles/" + vehicleId, settings)
+        window.location.reload();
     }
     handleFormChange(event) {
         const target = event.target;
