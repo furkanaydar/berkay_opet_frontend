@@ -42,7 +42,7 @@ class AddCarToWorkerModal extends Component {
                 automobile.automobileModel + ', ' + automobile.automobileYear
         })
 
-        fetch("https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
             .then(response => response.json())
             .then(data => this.setState({ currentlyAssignedVehicles: data }));
     }
