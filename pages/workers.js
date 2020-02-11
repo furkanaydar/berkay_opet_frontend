@@ -95,7 +95,7 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + worker.workerId + '/assignedVehicles', settings)
             .then(response => response.json())
             .then(data => this.setState({
                 currentWorker: worker,
