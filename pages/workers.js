@@ -69,7 +69,7 @@ class WorkersPage extends Component {
         };
 
 
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//workers/" + workerId, settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
         window.location.reload()
 
 
@@ -90,7 +90,7 @@ class WorkersPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
         window.location.reload();
     }
 
@@ -126,9 +126,9 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/workers', settings);
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings);
         
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers", get_settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
         .then(response => response.json())
         .then(data => this.setState({workers: data}));
         window.location.reload();
@@ -148,11 +148,11 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/workers", settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", settings)
         .then(response => response.json())
         .then(data => this.setState({workers: data}));
 
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
         .then(response => response.json())
         .then(data => this.setState({automobiles: data}));
 

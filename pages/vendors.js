@@ -77,13 +77,13 @@ class VendorsPage extends Component {
             body: JSON.stringify(data)
         };
         
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com//coordinates', address_settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/coordinates', address_settings)
         .then(response => response.json())
 
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/vendors', settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/vendors', settings)
         .then(response => response.json())
         
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/vendors", get_settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/vendors", get_settings)
         .then(response => response.json())
         .then(data => this.setState({vendors: data}));
         window.location.reload();
@@ -100,7 +100,7 @@ class VendorsPage extends Component {
             },
     
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/vendors", settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/vendors", settings)
         .then(response => response.json())
         .then(data => this.setState({vendors: data}));
     }
