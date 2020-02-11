@@ -70,11 +70,11 @@ class AutomobilesPage extends Component {
             body: JSON.stringify(data)
         };
         
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com//corporates/' + corporateId + '/automobiles', settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles', settings)
         .then(response => response.json())
 
         
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com//corporates/" + corporateId + "/automobiles", get_settings)
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", get_settings)
         .then(response => response.json())
         .then(data => this.setState({vehicles: data}));
 
