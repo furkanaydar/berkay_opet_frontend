@@ -82,6 +82,8 @@ class WorkersPage extends Component {
                 }))
     }
     handleModalCurrent(worker) {
+        let corporateId = localStorage.getItem("CorporateId");
+        let bearer = localStorage.getItem('Authorization')
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
         .then(response => response.json())
         .then(data => this.setState({ 
