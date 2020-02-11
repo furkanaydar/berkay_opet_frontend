@@ -32,6 +32,22 @@ class AutomobilesPage extends Component {
         })
     }
 
+    handleDeleteVehicle(vehicleId) {
+        let bearer = localStorage.getItem('Authorization')
+        let corporateId = localStorage.getItem('CorporateId')
+        const settings = {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': bearer
+            },
+        };
+
+
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates" + 
+        corporateId + "/automobiles/" + vehicleId, settings)
+    }
     handleFormChange(event) {
         const target = event.target;
         const value = target.value;
@@ -141,7 +157,9 @@ class AutomobilesPage extends Component {
                                             <td>{vehicle.automobileLicensePlate}</td>
                                             <td>{vehicle.automobileBrand + ', ' + vehicle.automobileModel + ', ' + vehicle.automobileYear}</td>
                                             <td style={{ fontSize: 20 }}>
-                                                <AiOutlineDelete style={{ marginRight: 12 }}></AiOutlineDelete>
+                                                <AiOutlineDelete 
+                                                onClick={() => this.handleDeleteVehicle(vehicle.automobileId)}
+                                                style={{ marginRight: 12 }}></AiOutlineDelete>
                                             </td>
                                         </tr>
                                     )
