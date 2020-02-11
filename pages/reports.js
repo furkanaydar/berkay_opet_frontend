@@ -20,14 +20,14 @@ class ReportsPage extends Component {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : bearer
+                'Authorization': bearer
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-    
+
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId +"/requests", settings)
-        .then(response => response.json())
-        .then(data => this.setState({reports: data}));
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/requests", settings)
+            .then(response => response.json())
+            .then(data => this.setState({ reports: data }));
     }
 
     render() {
@@ -45,16 +45,18 @@ class ReportsPage extends Component {
                     <div style={{ padding: 48, flexGrow: 5, }}>
                         <div>
                             <h1 style={{ borderBottom: '1px solid grey' }}>Raporlar</h1>
-                            <p style={{fontSize:13 , padding: 8}}>
-                                Mobil uygulamaya giriş yapan çalışanlar, plaka numaralarıyla beraber
-                                konum bilgilerini sisteme gönderir. Eğer ilgili araç çalışana tanımlanmışsa
-                                ve gönderilen konum anlaşmalı istasyonlarla eşleşiyorsa, istek sistem tarafından
-                                otomatik onaylanır ve
-                                QR kod üretilir. Bu QR kod daha sonra istasyon tarafından görünebilir hale
-                                gelecektir.
-                                QR ile birlikte isteği yapan plaka bilgisi de geri gönderilir, ve bu plakanın
-                                istasyonda bulunan aracın plakasıyla aynı olması gerekmektedir.
+                            <div style={{width:'50%', margin:'auto'}}>
+                                <p style={{ fontSize: 13, padding: 8 }}>
+                                    Mobil uygulamaya giriş yapan çalışanlar, plaka numaralarıyla beraber
+                                    konum bilgilerini sisteme gönderir. Eğer ilgili araç çalışana tanımlanmışsa
+                                    ve gönderilen konum anlaşmalı istasyonlarla eşleşiyorsa, istek sistem tarafından
+                                    otomatik onaylanır ve
+                                    QR kod üretilir. Bu QR kod daha sonra istasyon tarafından görünebilir hale
+                                    gelecektir.
+                                    QR ile birlikte isteği yapan plaka bilgisi de geri gönderilir, ve bu plakanın
+                                    istasyonda bulunan aracın plakasıyla aynı olması gerekmektedir.
                             </p>
+                            </div>
                         </div>
                         <Table style={{ marginTop: 32, textAlign: 'center' }} striped bordered hover>
                             <thead>
@@ -83,10 +85,10 @@ class ReportsPage extends Component {
 
                                             </td>
                                             {report.result == true ?
-                                                <td style={{color: 'green'}}>
+                                                <td style={{ color: 'green' }}>
                                                     Onaylandı
                                                 </td> :
-                                                <td style={{color: 'red'}}>
+                                                <td style={{ color: 'red' }}>
                                                     Başarısız
                                                 </td>
 
