@@ -207,10 +207,7 @@ class WorkersPage extends Component {
                         <SpecialTable
                             handleDeleteWorker={this.handleDeleteWorker}
                             handleModalCurrent={this.handleModalCurrent}
-                            workers={this.state.workers}
-
-                        >
-
+                            workers={this.state.workers}>
                         </SpecialTable>
                         <div className='addWorkerButton'
                             onClick={this.handleAddUserDisplay} style={{ padding: 6, marginTop: 32, }}>

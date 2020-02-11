@@ -4,7 +4,7 @@ import { MdDirectionsCar } from 'react-icons/md'
 import Table from 'react-bootstrap/Table'
 
 
-class SpecialTable extends Component() {
+class SpecialTable extends Component {
     constructor() {
         super();
         this.state = {
