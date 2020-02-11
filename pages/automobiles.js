@@ -42,7 +42,8 @@ class AutomobilesPage extends Component {
         });
     }
 
-    formSubmit() {
+    formSubmit(event) {
+        event.preventDefault();
         let corporateId = localStorage.getItem("CorporateId");
         let bearer = localStorage.getItem('Authorization')
         const data = {
@@ -56,10 +57,10 @@ class AutomobilesPage extends Component {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : bearer
+                'Authorization': bearer
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-    
+
         };
         const settings = {
             method: 'POST',
@@ -70,17 +71,17 @@ class AutomobilesPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        
+
+        let oldVehicles = this.state.vehicles
+
         fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles', settings)
-        .then(response => response.json())
-        .then(data => console.log(data))
+            .then(response => response.json())
+            .then(data => 
+                this.setState({
+                    vehicles: [...oldVehicles, data]
+                })
+            )
 
-        /*
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", get_settings)
-        .then(response => response.json())
-        .then(data => this.setState({vehicles: data})); */
-
-        window.location.reload();
     }
 
     componentDidMount() {
@@ -90,14 +91,14 @@ class AutomobilesPage extends Component {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization' : bearer
+                'Authorization': bearer
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-    
+
         };
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
-        .then(response => response.json())
-        .then(data => this.setState({vehicles: data}));
+            .then(response => response.json())
+            .then(data => this.setState({ vehicles: data }));
     }
     render() {
         return (
@@ -163,7 +164,7 @@ class AutomobilesPage extends Component {
                         {
                             this.state.addVehicleDisplay ?
                                 <div style={{ marginTop: 20, borderTop: '1px solid rgba(0, 0, 0, 0.1)' }}>
-                                    <Form style={{ marginTop: 32, }}>
+                                    <Form style={{ marginTop: 32, }} onSubmit={this.formSubmit}>
                                         <Form.Group controlId="formPlateNumber">
                                             <Form.Label>Araç Plakası</Form.Label>
                                             <Form.Control
@@ -201,7 +202,7 @@ class AutomobilesPage extends Component {
                                         </Form.Group>
 
 
-                                        <Button variant="primary" onClick={this.formSubmit}>
+                                        <Button variant="primary" type='submit'>
                                             Kaydet
                                 </Button>
                                     </Form>

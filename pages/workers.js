@@ -121,22 +121,13 @@ class WorkersPage extends Component {
             body: JSON.stringify(data)
         };
 
-        const get_settings = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': bearer
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-
-        };
-        let newWorkers = this.state.workers
+        let oldWorkers = this.state.workers
 
         fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
             .then(response => response.json())
             .then(data => 
                 this.setState({
-                    workers: [...newWorkers, data]
+                    workers: [...oldWorkers, data]
                 })    
             );
 
