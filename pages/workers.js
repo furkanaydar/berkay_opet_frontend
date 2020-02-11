@@ -32,6 +32,7 @@ class WorkersPage extends Component {
         this.formSubmit = this.formSubmit.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this)
         this.handleAssignment = this.handleAssignment.bind(this)
+        this.handleModalCurrent = this.handleModalCurrent.bind(this)
     }
 
     handleAddUserDisplay() {
@@ -74,7 +75,12 @@ class WorkersPage extends Component {
 
 
     }
-
+    handleModalCurrent() {
+        this.setState({
+            currentWorker: worker,
+            showAddCarModal: true
+        })
+    }
     handleAssignment(vehicleId, workerId) {
         let corporateId = localStorage.getItem("CorporateId");
         let bearer = localStorage.getItem('Authorization')
@@ -100,10 +106,10 @@ class WorkersPage extends Component {
         const data = {
             workerFirstName: this.state.firstName,
             workerLastName: this.state.lastName,
-            username : this.state.username,
+            username: this.state.username,
             password: this.state.password,
             phoneNumber: this.state.phoneNumber,
-            email : this.state.email,
+            email: this.state.email,
             userRole: 'worker'
         }
         const settings = {
@@ -127,15 +133,12 @@ class WorkersPage extends Component {
 
         };
         fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
-        .then(response => response.json())
-        .then(data => console.log(data));
-        
-
-        window.location.reload();
+            .then(response => response.json())
+            .then(data => console.log(data));
 
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
-        .then(response => response.json())
-        .then(data => this.setState({workers: data})); 
+            .then(response => response.json())
+            .then(data => this.setState({ workers: data }));
     }
 
     componentDidMount() {
@@ -153,12 +156,12 @@ class WorkersPage extends Component {
 
         };
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", settings)
-        .then(response => response.json())
-        .then(data => this.setState({workers: data}));
+            .then(response => response.json())
+            .then(data => this.setState({ workers: data }));
 
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
-        .then(response => response.json())
-        .then(data => this.setState({automobiles: data}));
+            .then(response => response.json())
+            .then(data => this.setState({ automobiles: data }));
 
 
 
@@ -204,55 +207,14 @@ class WorkersPage extends Component {
                         <div>
                             <h1 style={{ borderBottom: '1px solid grey' }}>Çalışanlar</h1>
                         </div>
-                        <Table style={{ marginTop: 32, textAlign: 'center' }} striped bordered hover>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>İsim</th>
-                                    <th>Soyisim</th>
-                                    <th>Telefon</th>
-                                    <th>Tanımlı Araçlar</th>
-                                    <th>İşlemler</th>
+                        <SpecialTable
+                            handleDeleteWorker={this.handleDeleteWorker}
+                            handleModalCurrent={this.handleModalCurrent}
+                            workers={this.state.workers}
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.state.workers.map((worker) =>
-                                        <tr>
-                                            <td>{worker.workerId}</td>
-                                            <td>{worker.workerFirstName}</td>
-                                            <td>{worker.workerLastName}</td>
-                                            <td>{worker.phoneNumber}</td>
-                                            <td
-                                                onClick={() =>
-                                                    this.setState({
-                                                        currentWorker: worker,
-                                                        showAddCarModal: true
-                                                    })}
-                                                style={{ cursor: 'pointer', textDecoration: 'underline' }}>
-                                                {worker.numberOfAssignedCars}
-                                            </td>
-                                            <td style={{ fontSize: 20 }}>
-                                                <a style={{ cursor: 'pointer' }} onClick={() => this.handleDeleteWorker(worker.workerId)}>
-                                                    <AiOutlineDelete style={{ marginRight: 12 }}></AiOutlineDelete>
-                                                </a>
-                                                <a style={{ cursor: 'pointer' }} onClick={() =>
-                                                    this.setState({
-                                                        currentWorker: worker,
-                                                        showAddCarModal: true
-                                                    })}>
-                                                    <MdDirectionsCar></MdDirectionsCar>
-                                                </a>
+                        >
 
-                                            </td>
-
-                                        </tr>
-                                    )
-                                }
-
-                            </tbody>
-                        </Table>
+                        </SpecialTable>
                         <div className='addWorkerButton'
                             onClick={this.handleAddUserDisplay} style={{ padding: 6, marginTop: 32, }}>
                             <a>
