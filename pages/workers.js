@@ -126,11 +126,13 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings);
-        
+        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
+        .then(response => response.json())
+        .then(data => console.log(data));
+        /*
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
         .then(response => response.json())
-        .then(data => this.setState({workers: data}));
+        .then(data => this.setState({workers: data})); */
         window.location.reload();
     }
 
@@ -301,7 +303,7 @@ class WorkersPage extends Component {
 
                                         </Form.Group>
 
-                                        <Form.Group controlId="formPhoneNumber">
+                                        <Form.Group controlId="formUsername">
                                             <Form.Label>Çalışan Kullanıcı Adı</Form.Label>
                                             <Form.Control
                                                 type="text"
@@ -311,7 +313,7 @@ class WorkersPage extends Component {
 
                                         </Form.Group>
 
-                                        <Form.Group controlId="formPhoneNumber">
+                                        <Form.Group controlId="formMail">
                                             <Form.Label>Çalışan Mail Adresi</Form.Label>
                                             <Form.Control
                                                 type="text"
