@@ -44,10 +44,14 @@ class AutomobilesPage extends Component {
             },
         };
 
-
+        let currentVehicles = this.state.vehicles
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + 
         corporateId + "/automobiles/" + vehicleId, settings)
-        window.location.reload();
+        .then(response => response.json())
+        .then(data =>
+            this.setState({
+                vehicles: currentVehicles.filter(vehicle => vehicle.automobileId != vehicleId)
+            }))
     }
     handleFormChange(event) {
         const target = event.target;
@@ -160,7 +164,7 @@ class AutomobilesPage extends Component {
                                             <td style={{ fontSize: 20 }}>
                                                 <AiOutlineDelete 
                                                 onClick={() => this.handleDeleteVehicle(vehicle.automobileId)}
-                                                style={{ marginRight: 12 }}></AiOutlineDelete>
+                                                style={{cursor:'pointer', marginRight: 12 }}></AiOutlineDelete>
                                             </td>
                                         </tr>
                                     )

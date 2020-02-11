@@ -69,8 +69,16 @@ class WorkersPage extends Component {
             },
         };
 
+        let currentWorkers = this.state.workers
 
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
+
+        fetch("https://cors-anywhere.herokuapp.com/" + 
+        "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
+        .then(response => response.json())
+        .then(data =>
+            this.setState({
+                workers : currentWorkers.filter(worker => worker.workerId != workerId)
+            }))
     }
     handleModalCurrent(worker) {
         this.setState({
