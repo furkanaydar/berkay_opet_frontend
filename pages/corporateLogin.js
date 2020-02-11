@@ -12,7 +12,7 @@ class CorporateLogin extends Component {
         this.state = {
             username: '',
             password: '',
-        }   
+        }
         this.handleFormChange = this.handleFormChange.bind(this);
         this.formSubmit = this.formSubmit.bind(this)
     }
@@ -33,6 +33,7 @@ class CorporateLogin extends Component {
         }
         const settings = {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -54,7 +55,7 @@ class CorporateLogin extends Component {
 
         return (
 
-            <div> 
+            <div>
 
                 <div style={{ display: 'flex', fontFamily: 'Rubik, sans-serif' }}>
                     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
@@ -98,7 +99,7 @@ class CorporateLogin extends Component {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         )
     }
 }
