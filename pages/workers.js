@@ -72,13 +72,13 @@ class WorkersPage extends Component {
 
         let currentWorkers = this.state.workers
 
-        fetch("https://cors-anywhere.herokuapp.com/" + 
-        "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
-        .then(response => response.json())
-        .then(data =>
-            this.setState({
-                workers : currentWorkers.filter(worker => worker.workerId != data.workerId)
-            }))
+        fetch("https://cors-anywhere.herokuapp.com/" +
+            "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
+            .then(response => response.json())
+            .then(data =>
+                this.setState({
+                    workers: currentWorkers.filter(worker => worker.workerId != data.workerId)
+                }))
     }
     handleModalCurrent(worker) {
         this.setState({
@@ -101,10 +101,10 @@ class WorkersPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + 
-        'https://berkay-project-backend.herokuapp.com/corporates/' 
-        + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
-        
+        fetch("https://cors-anywhere.herokuapp.com/" +
+            'https://berkay-project-backend.herokuapp.com/corporates/'
+            + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
+
     }
 
     formSubmit(event) {
@@ -135,12 +135,26 @@ class WorkersPage extends Component {
 
         fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
             .then(response => response.json())
-            .then(data => 
+            .then(data =>
                 this.setState({
                     workers: [...oldWorkers, data]
-                })    
+                })
             );
 
+        const get_settings = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': bearer
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+
+        };
+        setTimeout(() =>
+        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
+            .then(response => response.json())
+            .then(data => this.setState({ workers: data })), 2000
+        )
     }
 
     componentDidMount() {
