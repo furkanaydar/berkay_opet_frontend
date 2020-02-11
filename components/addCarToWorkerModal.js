@@ -76,7 +76,7 @@ class AddCarToWorkerModal extends Component {
                     </div>
                     <Form>
                         <Form.Group controlId="exampleForm.ControlSelect1">
-                            <Form.Label>Araç Seçin:</Form.Label>
+                            <Form.Label>Eklenecek Aracı Seçin:</Form.Label>
                             <Form.Control
                                 name="carSelection"
                                 value={this.state.carSelection}
