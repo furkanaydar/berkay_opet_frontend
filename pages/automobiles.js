@@ -51,7 +51,7 @@ class AutomobilesPage extends Component {
         .then(response => response.json())
         .then(data =>
             this.setState({
-                vehicles: currentVehicles.filter(vehicle => vehicle.automobileId != vehicleId)
+                vehicles: currentVehicles.filter(vehicle => vehicle.automobileId != data.automobileId)
             }))
     }
     handleFormChange(event) {
