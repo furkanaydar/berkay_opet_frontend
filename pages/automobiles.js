@@ -51,6 +51,7 @@ class AutomobilesPage extends Component {
             automobileYear: this.state.year,
             automobileModel: this.state.model
         }
+        console.log(corporateId + ' ' + bearer)
         const get_settings = {
             method: 'GET',
             headers: {
@@ -72,6 +73,7 @@ class AutomobilesPage extends Component {
         
         fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles', settings)
         .then(response => response.json())
+        .then(data => console.log(data))
 
         /*
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", get_settings)
