@@ -51,6 +51,8 @@ class ReportsPage extends Component {
                                 ve gönderilen konum anlaşmalı istasyonlarla eşleşiyorsa, istek onaylanır ve
                                 QR kod üretilir. Bu QR kod daha sonra istasyon tarafından görünebilir hale
                                 gelecektir.
+                                QR ile birlikte isteği yapan plaka bilgisi de geri gönderilir, ve bu plakanın
+                                istasyonda bulunan aracın plakasıyla aynı olması gerekmektedir.
                             </p>
                         </div>
                         <Table style={{ marginTop: 32, textAlign: 'center' }} striped bordered hover>
