@@ -101,8 +101,10 @@ class WorkersPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
-        window.location.reload();
+        fetch("https://cors-anywhere.herokuapp.com/" + 
+        'https://berkay-project-backend.herokuapp.com/corporates/' 
+        + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
+        
     }
 
     formSubmit(event) {
