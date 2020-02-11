@@ -82,14 +82,26 @@ class WorkersPage extends Component {
                 }))
     }
     handleModalCurrent(worker) {
+
+
         let corporateId = localStorage.getItem("CorporateId");
         let bearer = localStorage.getItem('Authorization')
+        const settings = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': bearer
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+
+        };
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + this.props.workerId + '/assignedVehicles', settings)
-        .then(response => response.json())
-        .then(data => this.setState({ 
-            currentWorker: worker,
-            showAddCarModal: true,
-            currentlyAssignedVehicles: data }));
+            .then(response => response.json())
+            .then(data => this.setState({
+                currentWorker: worker,
+                showAddCarModal: true,
+                currentlyAssignedVehicles: data
+            }));
 
     }
     handleAssignment(vehicleId, workerId) {
@@ -124,7 +136,7 @@ class WorkersPage extends Component {
         setTimeout(() =>
             fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
                 .then(response => response.json())
-                .then(data => this.setState({showAddCarModal:false, workers: data })), 2000
+                .then(data => this.setState({ showAddCarModal: false, workers: data })), 2000
         )
 
     }
