@@ -80,7 +80,7 @@ class VendorsPage extends Component {
         };
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/vendors", settings)
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => this.setState({vendors: data}));
     }
     render() {
         return (
