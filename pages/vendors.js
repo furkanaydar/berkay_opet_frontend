@@ -106,7 +106,7 @@ class VendorsPage extends Component {
                     <SideMenu></SideMenu>
                     <div style={{ padding: 48, flexGrow: 5, }}>
                         <div>
-                            <h1 style={{ borderBottom: '1px solid grey' }}>Bayiler</h1>
+                            <h1 style={{ borderBottom: '1px solid grey' }}>İstasyonlar</h1>
                         </div>
                         <Table style={{ marginTop: 32, textAlign: 'center' }} striped bordered hover>
                             <thead>

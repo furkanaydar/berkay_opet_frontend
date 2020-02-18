@@ -42,7 +42,7 @@ class SideMenu extends Component {
                                 </div>
                                 <div onClick={() => Router.push('/vendors')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <GiFuelTank style={{ verticalAlign: 'middle', marginRight: 24, }}></GiFuelTank>
-                                    <a>Bayiler</a>
+                                    <a>İstasyonlar</a>
                                 </div>
                                 <div onClick={() => Router.push('/reports')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <GoReport style={{ verticalAlign: 'middle', marginRight: 24, }}></GoReport>
