@@ -8,7 +8,7 @@ class SideMenu extends Component {
     constructor() {
         super();
         this.state = {
-
+            isLogged: false
         }
         this.handleLogout = this.handleLogout.bind(this)
     }
@@ -51,10 +51,14 @@ class SideMenu extends Component {
                             </div> :
                             null
                     }
-                    <div onClick={() => Router.push('/corporateLogin')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
-                        <GoSignIn style={{ verticalAlign: 'middle', marginRight: 24, }}></GoSignIn>
-                        <a>Şirket Girişi Yap</a>
-                    </div>
+                    {
+                        !this.state.isLogged ?
+                            <div onClick={() => Router.push('/corporateLogin')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                                <GoSignIn style={{ verticalAlign: 'middle', marginRight: 24, }}></GoSignIn>
+                                <a>Şirket Girişi Yap</a>
+                            </div>
+                            : null
+                    }
                     {
                         this.state.isLogged ?
 

@@ -9,7 +9,10 @@ class Home extends Component {
   }
   
   componentDidMount() {
-    Router.push('/corporateLogin')
+    localStorage.getItem('Authorization') != null ?
+      Router.push('/reports')
+      :
+      Router.push('/corporateLogin')
   }
   render() {
     return(
