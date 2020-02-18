@@ -87,7 +87,7 @@ class VendorsPage extends Component {
     render() {
         return (
             <div>
-                <div style={{ width:'60%', display: 'flex', fontFamily: 'Rubik, sans-serif' }}>
+                <div style={{ width:'80%', display: 'flex', fontFamily: 'Rubik, sans-serif' }}>
                     <style jsx>{`
                         .addWorkerButton {
                             cursor: pointer;
