@@ -39,33 +39,11 @@ class VendorsPage extends Component {
     formSubmit() {
         let corporateId = localStorage.getItem("CorporateId");
         let bearer = localStorage.getItem('Authorization')
-        const addressData = {
-            address : this.state.vendorAddress
-        }
         
         const data = {
             vendorName: this.state.vendorName,
             vendorAddress: this.state.vendorAddress,
         }
-        const get_settings = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization' : bearer
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-    
-        };
-        const address_settings = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization' : bearer
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: JSON.stringify(addressData)
-        };
-
         const settings = {
             method: 'POST',
             headers: {
@@ -102,7 +80,7 @@ class VendorsPage extends Component {
         };
         fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/vendors", settings)
         .then(response => response.json())
-        .then(data => this.setState({vendors: data}));
+        .then(data => console.log(data));
     }
     render() {
         return (
