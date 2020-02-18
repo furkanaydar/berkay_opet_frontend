@@ -100,7 +100,11 @@ class AutomobilesPage extends Component {
             .then(response => response.json())
             .then(data => 
                 this.setState({
-                    vehicles: [...oldVehicles, data]
+                    vehicles: [...oldVehicles, data],
+                    year: "",
+                    model: "",
+                    brand: "",
+                    plateNumber: "",
                 })
             )
 

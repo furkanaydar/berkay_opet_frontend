@@ -171,7 +171,13 @@ class WorkersPage extends Component {
             .then(response => response.json())
             .then(data =>
                 this.setState({
-                    workers: [...oldWorkers, data]
+                    workers: [...oldWorkers, data],
+                    firstName: "",
+                    lastName: "",
+                    password: "",
+                    phoneNumber: "",
+                    username: '',
+                    email: '',
                 })
             );
 

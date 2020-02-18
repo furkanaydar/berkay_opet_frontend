@@ -62,7 +62,9 @@ class VendorsPage extends Component {
         .then(response => response.json())
         .then(data => 
             this.setState({
-                vendors: [...oldVendors, data]
+                vendors: [...oldVendors, data],
+                vendorName: '',
+                vendorAddress: ''
             })
         );
     }
