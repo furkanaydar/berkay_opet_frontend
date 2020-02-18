@@ -42,7 +42,7 @@ class ReportsPage extends Component {
                         crossorigin="anonymous"
                     />
                     <SideMenu></SideMenu>
-                    <div style={{ padding: 48, flexGrow: 5, }}>
+                    <div style={{width:'80%', padding: 48, }}>
                         <div>
                             <h1 style={{ borderBottom: '1px solid grey' }}>Raporlar</h1>
                                 <p style={{ fontSize: 12, padding: 6 }}>
