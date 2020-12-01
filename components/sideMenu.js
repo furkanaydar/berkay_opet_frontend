@@ -3,6 +3,7 @@ import { FaNetworkWired } from 'react-icons/fa'
 import { MdDirectionsCar } from 'react-icons/md'
 import { GoReport, GoSignIn, GoSignOut } from 'react-icons/go'
 import { GiFuelTank } from 'react-icons/gi'
+import { SiShell } from 'react-icons/si'
 import Router from 'next/router'
 class SideMenu extends Component {
     constructor() {
@@ -26,7 +27,9 @@ class SideMenu extends Component {
         return (
 
             <div style={{ width: '24%', marginRight: 12, padding: 22, }}>
-                <h1 style={{ borderBottom: '1px solid grey' }}>Yönetim Paneli</h1>
+                <h1 style={{ borderBottom: '1px solid grey' }}>
+                                                        <SiShell style={{ verticalAlign: 'middle', marginRight: 24, }}></SiShell> Yönetim Paneli
+                </h1>
                 <div style={{ marginTop: 32, }}>
                     {
                         this.state.isLogged ?
