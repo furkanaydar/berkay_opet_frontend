@@ -56,7 +56,7 @@ class SideMenu extends Component {
                     }
                     {
                         !this.state.isLogged ?
-                            <div onClick={() => Router.push('/corporateLogin')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                            <div onClick={() => Router.push('/corporateLogin')} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                 <GoSignIn style={{ verticalAlign: 'middle', marginRight: 24, }}></GoSignIn>
                                 <a>Şirket Girişi Yap</a>
                             </div>
@@ -65,7 +65,7 @@ class SideMenu extends Component {
                     {
                         this.state.isLogged ?
 
-                            <div onClick={this.handleLogout} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                            <div onClick={this.handleLogout} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                 <GoSignOut style={{ verticalAlign: 'middle', marginRight: 24, }}></GoSignOut>
                                 <a>Çıkış Yap</a>
                             </div>
