@@ -26,7 +26,7 @@ class SideMenu extends Component {
         return (
 
             <div style={{ width: '24%', marginRight: 12, padding: 22, }}>
-                <h1 style={{ borderBottom: '1px solid grey' }}>Otobil</h1>
+                <h1 style={{ borderBottom: '1px solid grey' }}>Yönetim Paneli</h1>
                 <div style={{ marginTop: 32, }}>
                     {
                         this.state.isLogged ?
