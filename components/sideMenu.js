@@ -3,7 +3,7 @@ import { FaNetworkWired } from 'react-icons/fa'
 import { MdDirectionsCar } from 'react-icons/md'
 import { GoReport, GoSignIn, GoSignOut } from 'react-icons/go'
 import { GiFuelTank } from 'react-icons/gi'
-import { SiShell } from 'react-icons/si'
+import { SiShell } from "react-icons/si";
 import Router from 'next/router'
 class SideMenu extends Component {
     constructor() {
