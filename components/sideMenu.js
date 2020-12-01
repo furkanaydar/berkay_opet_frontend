@@ -32,19 +32,19 @@ class SideMenu extends Component {
                         this.state.isLogged ?
 
                             < div >
-                                <div onClick={() => Router.push('/workers')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                                <div onClick={() => Router.push('/workers')} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <FaNetworkWired style={{ verticalAlign: 'middle', marginRight: 24, }}></FaNetworkWired>
                                     <a>Çalışanlar</a>
                                 </div>
-                                <div onClick={() => Router.push('/automobiles')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                                <div onClick={() => Router.push('/automobiles')} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <MdDirectionsCar style={{ verticalAlign: 'middle', marginRight: 24, }}></MdDirectionsCar>
                                     <a>Araçlar</a>
                                 </div>
-                                <div onClick={() => Router.push('/vendors')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                                <div onClick={() => Router.push('/vendors')} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <GiFuelTank style={{ verticalAlign: 'middle', marginRight: 24, }}></GiFuelTank>
                                     <a>İstasyonlar</a>
                                 </div>
-                                <div onClick={() => Router.push('/reports')} style={{ borderBottom: '1px solid rgba(0, 0, 0, 0.1)', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
+                                <div onClick={() => Router.push('/reports')} style={{ backgroundColor:'#FFD500', borderBottom: '8px solid #ED1C24', marginTop: 32, padding: 12, fontSize: 22, cursor: 'pointer' }}>
                                     <GoReport style={{ verticalAlign: 'middle', marginRight: 24, }}></GoReport>
                                     <a>Raporlar</a>
                                 </div>
