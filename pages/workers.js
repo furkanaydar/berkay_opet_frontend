@@ -119,7 +119,7 @@ class WorkersPage extends Component {
             },
             body: JSON.stringify(data)
         };
-        fetch("https://cors-anywhere.herokuapp.com/" +
+        fetch(
             'https://berkay-project-backend.herokuapp.com/corporates/'
             + corporateId + '/automobiles/' + parseInt(vehicleId) + '/assignedWorkers', settings);
 
