@@ -58,7 +58,7 @@ class VendorsPage extends Component {
         let oldVendors = this.state.vendors
 
 
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/vendors', settings)
+        fetch('https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/vendors', settings)
         .then(response => response.json())
         .then(data => 
             this.setState({
