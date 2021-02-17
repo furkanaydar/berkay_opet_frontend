@@ -129,9 +129,6 @@ class AutomobilesPage extends Component {
     render() {
         return (
             <div>
-                <div>
-                    {this.state.vendorName}, {this.state.vendorAddress}
-                </div>
                 <div style={{ display: 'flex', fontFamily: 'Rubik, sans-serif' }}>
                     <style jsx>{`
                         .addVehicleButton {
