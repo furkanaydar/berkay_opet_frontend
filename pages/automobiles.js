@@ -46,7 +46,7 @@ class AutomobilesPage extends Component {
         };
 
         let currentVehicles = this.state.vehicles
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + 
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + 
         corporateId + "/automobiles/" + vehicleId, settings)
         .then(response => response.json())
         .then(data =>
