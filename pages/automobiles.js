@@ -96,7 +96,7 @@ class AutomobilesPage extends Component {
 
         let oldVehicles = this.state.vehicles
 
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles', settings)
+        fetch('https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/automobiles', settings)
             .then(response => response.json())
             .then(data => 
                 this.setState({
@@ -122,7 +122,7 @@ class AutomobilesPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
             .then(response => response.json())
             .then(data => this.setState({ vehicles: data }));
     }
