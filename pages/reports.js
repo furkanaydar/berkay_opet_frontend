@@ -25,7 +25,7 @@ class ReportsPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/requests", settings)
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/requests", settings)
             .then(response => response.json())
             .then(data => this.setState({ reports: data }));
     }
