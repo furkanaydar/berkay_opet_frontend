@@ -73,7 +73,7 @@ class WorkersPage extends Component {
 
         let currentWorkers = this.state.workers
 
-        fetch("https://cors-anywhere.herokuapp.com/" +
+        fetch(
             "https://berkay-project-backend.herokuapp.com/workers/" + workerId, settings)
             .then(response => response.json())
             .then(data =>
@@ -95,7 +95,7 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + worker.workerId + '/assignedVehicles', settings)
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers/" + worker.workerId + '/assignedVehicles', settings)
             .then(response => response.json())
             .then(data => this.setState({
                 currentWorker: worker,
@@ -134,7 +134,7 @@ class WorkersPage extends Component {
 
         };
         setTimeout(() =>
-            fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
+            fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", get_settings)
                 .then(response => response.json())
                 .then(data => this.setState({ showAddCarModal: false, workers: data })), 2000
         )
@@ -167,7 +167,7 @@ class WorkersPage extends Component {
 
         let oldWorkers = this.state.workers
 
-        fetch("https://cors-anywhere.herokuapp.com/" + 'https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
+        fetch('https://berkay-project-backend.herokuapp.com/corporates/' + corporateId + '/workers', settings)
             .then(response => response.json())
             .then(data =>
                 this.setState({
@@ -197,11 +197,11 @@ class WorkersPage extends Component {
             },
 
         };
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", settings)
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/workers", settings)
             .then(response => response.json())
             .then(data => this.setState({ workers: data }));
 
-        fetch("https://cors-anywhere.herokuapp.com/" + "https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
+        fetch("https://berkay-project-backend.herokuapp.com/corporates/" + corporateId + "/automobiles", settings)
             .then(response => response.json())
             .then(data => this.setState({ automobiles: data }));
 
